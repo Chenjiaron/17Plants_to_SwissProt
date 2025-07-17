@@ -1,4 +1,4 @@
-# 17Plants_to_SwissProt
+# Structure-guided plant protein discovery
 
 ## Result dataframe and retrieval system
 
