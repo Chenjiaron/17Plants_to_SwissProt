@@ -6,35 +6,34 @@ Results tables and the retrieval system can be found on our website: http://47.1
 
 ## Data
 
-The raw data and process analysis results for this study are all contained within the `DATA` folder.
+Due to the large data volume, the raw data and processed analysis results for this study, as contained within the DATA folder in our code, are also available for download on the website.
 
 ## Codes
 The code for generating the final results table resides in the `Codes` folder.
 
 The code's operational flow to yield the results table.
 
-1. Clone the repository:
+1. Stastic basic annotation from EggNog-mapper, Uniprot and Tair:
 
 ```
-git clone https://github.com/westlake-repl/ESM-Ezy.git
+python Codes/get_cluster_all_annotation.py
 ```
 
-2. Install the required packages:
+2. Stastic detailed annotation from Tair:
 
 ```
-conda env create -f environment.yml
+python Codes/get_cluster_tair_annotation.py
 ```
 
-3. Download the pre-trained ESM-1b model:
+3. Stastic detailed annotation from foldseek alignment result:
 
 ```
-wget https://dl.fbaipublicfiles.com/fair-esm/models/esm1b_t33_650M_UR50S.pt -O ckpt/esm1b_t33_650M_UR50S.pt
-wget https://dl.fbaipublicfiles.com/fair-esm/regression/esm1b_t33_650M_UR50S-contact-regression.pt -O ckpt/esm1b_t33_650M_UR50S-contact-regression.pt
+python Codes/get_cluster_foldseek_annotation.py
 ```
 
-4. Train ESM-Ezy:
+4. Compare structural alignment results with sequence alignment results and present them in a final table:
 
 ```
-python scripts/train.py --train_positive_data data/train/train_positive.fa --train_negative_data data/train/train_negative.fa --test_positive_data data/train/test_positive.fa --test_negative_data data/train/test_negative.fa --model_path ckpt/esm1b_t33_650M_UR50S.pt
+python Codes/get_cluster_foldseek_blastp_diff.py
 ```
 
