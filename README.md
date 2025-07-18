@@ -6,7 +6,7 @@ Results tables and the retrieval system can be found on our website: http://47.1
 
 ## Data
 
-Due to the large data volume, the raw data and processed analysis results for this study, as contained within the DATA folder in our code, are also available for download on the website.
+Due to the large data volume, only a portion of the raw data and processed analysis results for this study, as contained within the DATA folder in our code, are included here. The complete dataset is available for download on the website.
 
 ## Codes
 The code for generating the final results table resides in the `Codes` folder.
